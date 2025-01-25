@@ -26,4 +26,5 @@ jobs:
          echo "Cuenta: ${{ env.account }}"
 
       - name: "Mostrando valores por defecto"
-        run: ${{toJson(github.event)}}
+        run: 
+          echo "event ${{toJSON(github.event)}}"
