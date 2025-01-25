@@ -4,12 +4,22 @@ on:
   push:
     branches: [ "main" ]
 
-  workflow_dispatch:
 
 jobs:
   build:
+    env:
+      platform: aws
+      region: us-east-1
+      account: 123456789012
+    
     runs-on: ubuntu-latest
 
     steps:
       - name: "Mostrar mensaje"
         run: echo "Hola, mundo!"
+
+      - name: "Mostrar variables de entorno"
+        run: |
+         echo "Plataforma: ${{ env.platform }}"
+         echo "Región: ${{ env.region }}"
+         echo "Cuenta: ${{ env.account }}"
