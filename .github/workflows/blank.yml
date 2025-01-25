@@ -24,3 +24,6 @@ jobs:
          echo "Plataforma: ${{ env.platform }}"
          echo "Región: ${{ env.region }}"
          echo "Cuenta: ${{ env.account }}"
+
+      - name: "Mostrando valores por defecto"
+        run: ${{toJson(github.event)}}
